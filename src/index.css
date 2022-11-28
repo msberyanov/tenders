@@ -1,13 +1,29 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  background: linear-gradient(270deg, #2c7a5a, #126e64);
+  background-size: 400% 400%;
+
+  animation: animated-background 7s ease infinite;
+  transition: background 3s ease;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.tenders {
+  background: linear-gradient(270deg, #2c7a5a, #126e64);
+}
+
+.contacts {
+  background: linear-gradient(270deg, #7a0f40, #8d111b);
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes animated-background {
+  0%{background-position:0 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0 50%}
 }
