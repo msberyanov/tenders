@@ -1,11 +1,12 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { ITender } from "../../models/ITender";
 import { IChangeFavouriteTender } from "../../models/IChangeFavouriteTender";
+import { TENDERS_SERVER_URL } from "../../../../constants/url";
 
 export const tendersApi = createApi({
   reducerPath: "tenders/api",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:8080/"
+    baseUrl: TENDERS_SERVER_URL
   }),
   refetchOnMountOrArgChange: true,
   endpoints: build => ({
