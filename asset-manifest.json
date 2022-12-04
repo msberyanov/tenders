@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/tenders/static/css/main.3b49eb13.css",
-    "main.js": "/tenders/static/js/main.35b563e3.js",
+    "main.js": "/tenders/static/js/main.46a3cd0c.js",
     "index.html": "/tenders/index.html",
     "main.3b49eb13.css.map": "/tenders/static/css/main.3b49eb13.css.map",
-    "main.35b563e3.js.map": "/tenders/static/js/main.35b563e3.js.map"
+    "main.46a3cd0c.js.map": "/tenders/static/js/main.46a3cd0c.js.map"
   },
   "entrypoints": [
     "static/css/main.3b49eb13.css",
-    "static/js/main.35b563e3.js"
+    "static/js/main.46a3cd0c.js"
   ]
 }
