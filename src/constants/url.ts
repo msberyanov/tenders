@@ -1,1 +1,1 @@
-export const TENDERS_SERVER_URL = "http://188.68.220.94/";
+export const TENDERS_SERVER_URL = "https://www.course-lab-work.online/";
