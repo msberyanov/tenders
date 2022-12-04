@@ -6,8 +6,14 @@ module.exports = {
     extend: {
       transitionProperty: {
         'background': 'background',
+      },
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
+        'appearance': 'appearance 0.5s forwards',
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
 }

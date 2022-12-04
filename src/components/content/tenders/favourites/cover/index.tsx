@@ -1,17 +1,17 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { TendersCard } from "../card";
 import { BiError, BiLoader } from "react-icons/bi";
-import { useGetTendersQuery } from "../../../store/tenders/api";
-import { ITender } from "../../../store/models/ITender";
+import { useGetFavouriteTendersQuery } from "../../../../store/tenders/api";
+import { ITender } from "../../../../store/models/ITender";
+import { TendersCard } from "../../card";
 
-export const TendersCover: React.FC = () => {
+export const FavouritesTendersCover: React.FC = () => {
   const {
     data,
     isSuccess,
     isLoading,
     isError,
     refetch
-  } = useGetTendersQuery();
+  } = useGetFavouriteTendersQuery();
 
   const [tenders, setTenders] = useState<ITender[]>([]);
 
@@ -23,7 +23,7 @@ export const TendersCover: React.FC = () => {
 
   const tendersCards = useMemo(() => {
     return (
-      <div className="flex flex-wrap w-full h-full ml-[20px] mt-[20px]">
+      <div className="flex flex-wrap content-start w-full h-full ml-[20px] mt-[20px]">
         {tenders.map(tender =>
           <TendersCard
             id={tender.id}

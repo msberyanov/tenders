@@ -9,11 +9,17 @@ export const navigationButtons: NavigationButtonProps[] = [
     selectionColor: "#5f9581"
   },
   {
+    name: "Избранное",
+    link: "/favourites",
+    className: "favourites",
+    selectionColor: "#5484b1"
+  },
+  {
     name: "Контакты",
     link: "/contacts",
     className: "contacts",
-    selectionColor: "#9f4762"
-  }
+    selectionColor: "rgba(183,88,121,0.97)"
+  },
 ];
 
 interface NavigationButtonProps {

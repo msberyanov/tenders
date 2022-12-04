@@ -1,6 +1,8 @@
 import React from 'react';
 import { Navigate, Route, Routes } from "react-router-dom";
 import { TendersCover } from "./tenders/cover";
+import { FavouritesTendersCover } from "./tenders/favourites/cover";
+import { ContactsCover } from "./contacts/cover";
 
 export const Content: React.FC = () => {
   return (
@@ -12,8 +14,12 @@ export const Content: React.FC = () => {
             element={<TendersCover/>}
           />
           <Route
+            path="/favourites"
+            element={<FavouritesTendersCover/>}
+          />
+          <Route
             path="/contacts"
-            element={<div className="h-[1000px]">contacts</div>}
+            element={<ContactsCover/>}
           />
           <Route
             path="*"
