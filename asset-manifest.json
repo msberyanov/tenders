@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/tenders/static/css/main.3b49eb13.css",
+    "main.js": "/tenders/static/js/main.19285cf7.js",
+    "index.html": "/tenders/index.html",
+    "main.3b49eb13.css.map": "/tenders/static/css/main.3b49eb13.css.map",
+    "main.19285cf7.js.map": "/tenders/static/js/main.19285cf7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3b49eb13.css",
+    "static/js/main.19285cf7.js"
+  ]
+}
