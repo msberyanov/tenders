@@ -37,7 +37,7 @@ export const FavouritesTendersCover: React.FC = () => {
         )}
       </div>
     );
-  }, [tenders]);
+  }, [refetch, tenders]);
 
   if (isLoading) {
     return (
