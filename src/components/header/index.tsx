@@ -29,6 +29,10 @@ export const Header: React.FC = () => {
     <ReturnButton name="Вернуться к избранным"/>
   );
 
+  const returnSearchTendersButton = (
+    <ReturnButton name="Вернуться к поиску"/>
+  );
+
   const searchButton = <SimpleButton name="Поиск"/>;
 
   return (
@@ -38,11 +42,20 @@ export const Header: React.FC = () => {
         <div className="flex justify-center items-center">
           <Routes>
             <Route
-              path="/tenders/search*"
+              path="/tenders/search"
               element={
                 <>
                   {relevantNavigationButtons(navigationButtons)}
                   {searchButton}
+                </>
+              }
+            />
+            <Route
+              path="/tenders/search/:id"
+              element={
+                <>
+                  {returnSearchTendersButton}
+                  {relevantNavigationButtons(navigationButtons)}
                 </>
               }
             />

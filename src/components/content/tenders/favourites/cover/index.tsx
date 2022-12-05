@@ -45,7 +45,7 @@ export const FavouritesTendersCover: React.FC = () => {
       <div className="flex h-full w-full items-center justify-center text-white text-xl">
         <div className="flex bg-[rgba(255,255,255,0.2)] py-2 px-4 rounded-xl animate-appearance">
           <BiLoader className="mr-[10px] text-2xl animate-spin-slow"/>
-          Загрузка тендеров
+          Загрузка избранных тендеров
         </div>
       </div>
     );
@@ -60,7 +60,7 @@ export const FavouritesTendersCover: React.FC = () => {
       <div className="flex h-full w-full items-center justify-center text-white text-xl">
         <div className="flex bg-[rgba(255,255,255,0.2)] py-2 px-4 rounded-xl animate-appearance">
           <BiError className="mr-[10px] text-2xl"/>
-          Ошибка при загрузке тендеров
+          Ошибка при загрузке избранных тендеров
         </div>
       </div>
     )

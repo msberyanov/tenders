@@ -12,8 +12,12 @@ export const Content: React.FC = () => {
       <div className="flex w-[calc(100%-60px)] h-[calc(100%-60px)] mb-[30px] bg-[rgba(255,255,255,0.2)] rounded-2xl mt-[100px] shadow-md overflow-scroll">
         <Routes>
           <Route
-            path="/tenders/search*"
+            path="/tenders/search"
             element={<TendersSearchCover/>}
+          />
+          <Route
+            path="/tenders/search/:id"
+            element={<Tender/>}
           />
           <Route
             path="/tenders"
