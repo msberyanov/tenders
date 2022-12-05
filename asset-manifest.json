@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/tenders/static/css/main.35acda7b.css",
-    "main.js": "/tenders/static/js/main.94089b2d.js",
+    "main.css": "/tenders/static/css/main.7f39595b.css",
+    "main.js": "/tenders/static/js/main.ef2836b6.js",
     "index.html": "/tenders/index.html",
-    "main.35acda7b.css.map": "/tenders/static/css/main.35acda7b.css.map",
-    "main.94089b2d.js.map": "/tenders/static/js/main.94089b2d.js.map"
+    "main.7f39595b.css.map": "/tenders/static/css/main.7f39595b.css.map",
+    "main.ef2836b6.js.map": "/tenders/static/js/main.ef2836b6.js.map"
   },
   "entrypoints": [
-    "static/css/main.35acda7b.css",
-    "static/js/main.94089b2d.js"
+    "static/css/main.7f39595b.css",
+    "static/js/main.ef2836b6.js"
   ]
 }
