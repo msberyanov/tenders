@@ -12,7 +12,7 @@ const TenderProperty: React.FC<TenderPropertyProps> = ({
   value
 }) => {
   return (
-    <div className="flex flex-col w-[calc(33.3333%-40px)] h-[150px] items-center justify-center text-2xl ml-[30px] mt-[30px]">
+    <div className="flex flex-col w-[calc(33.3333%-40px)] h-[150px] items-center justify-center text-xl ml-[30px] mt-[30px]">
       <span className="flex bg-[rgba(255,255,255,0.4)] w-[calc(100%)] h-[calc(40%)] rounded-t-lg text-white font-medium justify-center items-center">{title}</span>
       <span className="flex bg-[rgba(255,255,255,0.2)] w-[calc(100%)] h-[calc(60%)] rounded-b-lg items-center justify-center font-medium text-white whitespace-nowrap">{value}</span>
     </div>
@@ -38,7 +38,7 @@ export const Tender: React.FC = () => {
   if (isSuccess) {
     return (
       <div className="flex flex-col w-full h-full animate-appearance">
-        <div className="text-white text-3xl font-medium w-[calc(100%-80px)] ml-[30px] mt-[30px]">{data.name}</div>
+        <div className="text-white text-2xl font-medium w-[calc(100%-80px)] ml-[30px] mt-[30px]">{data.name}</div>
         <div className="flex flex-wrap">
           <TenderProperty title="Начальная цена" value={data.price + " ₽"}/>
           <TenderProperty title="Номер тендера" value={data.description}/>
