@@ -19,7 +19,11 @@ export const SearchBar: React.FC = () => {
         }}
         onKeyUp={event => {
           if (event.key === 'Enter' || event.keyCode === 13) {
-            navigate(`/tenders/search?name=${searchName}`)
+            if (searchName === "") {
+              navigate(`/tenders`);
+            } else {
+              navigate(`/tenders/search?name=${searchName}`);
+            }
           }
         }}
       />
