@@ -28,7 +28,7 @@ export const TendersSearchCover: React.FC = () => {
   }, [data, isSuccess]);
 
   const tendersCards = useMemo(() => {
-    if (tenders.length === 0) {
+    if (isSuccess && tenders.length === 0) {
       return (
         <div className="flex h-full w-full items-center justify-center text-white text-xl">
           <div className="flex bg-[rgba(255,255,255,0.2)] py-2 px-4 rounded-xl animate-appearance">
@@ -84,11 +84,6 @@ export const TendersSearchCover: React.FC = () => {
   }
 
   return (
-    <div className="flex h-full w-full items-center justify-center text-white text-xl">
-      <div className="flex bg-[rgba(255,255,255,0.2)] py-2 px-4 rounded-xl animate-appearance">
-        <MdOutlineErrorOutline className="mr-[10px] text-2xl"/>
-        Тендеры не найдены
-      </div>
-    </div>
+    <div/>
   );
 };
