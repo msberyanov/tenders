@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 html {
-  background: linear-gradient(270deg, #2c7a5a, #126e64);
   background-size: 400% 400%;
 
   animation: animated-background 7s ease infinite;
@@ -15,11 +14,11 @@ html {
 }
 
 .tenders {
-  background: linear-gradient(270deg, #2c7a5a, #126e64);
+  background: linear-gradient(270deg, #25599b, #12639d);
 }
 
 .contacts {
-  background: linear-gradient(270deg, #7a0f40, #8d111b);
+  background: linear-gradient(270deg, #25599b, #12639d);
 }
 
 *::-webkit-scrollbar {

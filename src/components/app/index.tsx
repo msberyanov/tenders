@@ -9,7 +9,7 @@ export const App: React.FC = () => {
 
   useEffect(() => {
     if (pathname) {
-      const navigationButtonInfo = navigationButtons.find(navigationButton => navigationButton.link === pathname);
+      const navigationButtonInfo = navigationButtons.find(navigationButton => pathname.startsWith(navigationButton.link));
 
       document.documentElement.className = "";
       document.documentElement.classList.add(navigationButtonInfo?.className ?? "");

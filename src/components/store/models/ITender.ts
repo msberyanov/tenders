@@ -4,5 +4,6 @@ export interface ITender {
   description: string;
   expiration: string;
   price: string;
+  region: string;
   favourite: boolean;
 }

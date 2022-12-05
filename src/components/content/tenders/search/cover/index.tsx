@@ -1,17 +1,23 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { TendersCard } from "../card";
+import React, { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "react-router-dom";
+import { useSearchTendersQuery } from "../../../../store/tenders/api";
+import { TendersCard } from "../../card";
+import { ITender } from "../../../../store/models/ITender";
 import { BiError, BiLoader } from "react-icons/bi";
-import { useGetTendersQuery } from "../../../store/tenders/api";
-import { ITender } from "../../../store/models/ITender";
+import { MdOutlineErrorOutline } from "react-icons/md";
 
-export const TendersCover: React.FC = () => {
+export const TendersSearchCover: React.FC = () => {
+  const [searchParams] = useSearchParams();
+
+  const name = searchParams.get("name");
+
   const {
     data,
     isSuccess,
     isLoading,
     isError,
     refetch
-  } = useGetTendersQuery();
+  } = useSearchTendersQuery(name ?? "");
 
   const [tenders, setTenders] = useState<ITender[]>([]);
 
@@ -22,6 +28,17 @@ export const TendersCover: React.FC = () => {
   }, [data, isSuccess]);
 
   const tendersCards = useMemo(() => {
+    if (tenders.length === 0) {
+      return (
+        <div className="flex h-full w-full items-center justify-center text-white text-xl">
+          <div className="flex bg-[rgba(255,255,255,0.2)] py-2 px-4 rounded-xl animate-appearance">
+            <MdOutlineErrorOutline className="mr-[10px] text-2xl"/>
+            Тендеры не найдены
+          </div>
+        </div>
+      );
+    }
+
     return (
       <div className="flex flex-wrap content-start w-full h-full ml-[20px] mt-[20px]">
         {tenders.map(tender =>
@@ -60,7 +77,7 @@ export const TendersCover: React.FC = () => {
       <div className="flex h-full w-full items-center justify-center text-white text-xl">
         <div className="flex bg-[rgba(255,255,255,0.2)] py-2 px-4 rounded-xl animate-appearance">
           <BiError className="mr-[10px] text-2xl"/>
-          Ошибка при загрузке тендеров
+          Ошибка при поиске тендеров
         </div>
       </div>
     )
@@ -69,9 +86,9 @@ export const TendersCover: React.FC = () => {
   return (
     <div className="flex h-full w-full items-center justify-center text-white text-xl">
       <div className="flex bg-[rgba(255,255,255,0.2)] py-2 px-4 rounded-xl animate-appearance">
-        <BiLoader className="mr-[10px] text-2xl"/>
+        <MdOutlineErrorOutline className="mr-[10px] text-2xl"/>
         Тендеры не найдены
       </div>
     </div>
-  )
+  );
 };

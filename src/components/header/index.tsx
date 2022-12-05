@@ -1,26 +1,86 @@
 import React from 'react';
-import { NavigationButton, navigationButtons } from "./navigation/button";
+import { NavigationButton, NavigationButtonProps, navigationButtons } from "./navigation/button";
 import { Button, buttons } from "./button";
 import { SearchBar } from "./search-bar";
-import { useLocation } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { ReturnButton } from "./navigation/return-button";
+import { SimpleButton } from "./navigation/simple-button";
 
 export const Header: React.FC = () => {
   const {pathname} = useLocation();
+
+  const relevantNavigationButtons = (navigationButtons: NavigationButtonProps[]) => {
+    return navigationButtons.map(navigationButton =>
+      <NavigationButton
+        name={navigationButton.name}
+        link={navigationButton.link}
+        className={navigationButton.className}
+        selectionColor={navigationButton.selectionColor}
+        current={navigationButton.link === pathname}
+      />
+    )
+  }
+
+  const returnTendersButton = (
+    <ReturnButton name="Вернуться к закупкам"/>
+  );
+
+  const returnFavouriteTendersButton = (
+    <ReturnButton name="Вернуться к избранным"/>
+  );
+
+  const searchButton = <SimpleButton name="Поиск"/>;
 
   return (
     <div className="fixed flex h-[100px] w-screen">
       <div className="flex w-screen justify-between items-center">
         <div className="ml-[40px] text-xl text-white font-extrabold">ТЕНДЕРЫ</div>
         <div className="flex justify-center items-center">
-          {navigationButtons.map(navigationButton =>
-            <NavigationButton
-              name={navigationButton.name}
-              link={navigationButton.link}
-              className={navigationButton.className}
-              selectionColor={navigationButton.selectionColor}
-              current={navigationButton.link === pathname}
+          <Routes>
+            <Route
+              path="/tenders/search*"
+              element={
+                <>
+                  {relevantNavigationButtons(navigationButtons)}
+                  {searchButton}
+                </>
+              }
             />
-          )}
+            <Route
+              path="/tenders"
+              element={relevantNavigationButtons(navigationButtons)}
+            />
+            <Route
+              path="/tenders/:id"
+              element={
+                <>
+                  {returnTendersButton}
+                  {relevantNavigationButtons(navigationButtons.filter(navigationButton => navigationButton.name !== "Закупки"))}
+                </>
+              }
+            />
+            <Route
+              path="/favourites"
+              element={relevantNavigationButtons(navigationButtons)}
+            />
+            <Route
+              path="/favourites/:id"
+              element={
+                <>
+                  {returnFavouriteTendersButton}
+                  {relevantNavigationButtons(navigationButtons.filter(navigationButton => navigationButton.name !== "Избранное"))}
+                </>
+              }
+            />
+            <Route
+              path="/contacts"
+              element={relevantNavigationButtons(navigationButtons)}
+            />
+            <Route
+              path="*"
+              element={relevantNavigationButtons(navigationButtons)}
+            />
+          </Routes>
         </div>
         <div className="flex">
           <SearchBar/>

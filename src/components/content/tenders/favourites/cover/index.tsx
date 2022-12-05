@@ -32,6 +32,7 @@ export const FavouritesTendersCover: React.FC = () => {
             expiration={tender.expiration}
             price={tender.price}
             favourite={tender.favourite}
+            region={tender.region}
             refetch={refetch}
           />
         )}
