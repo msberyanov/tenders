@@ -2,17 +2,17 @@ import { configureStore } from "@reduxjs/toolkit";
 import { tendersApi } from "./tenders/api";
 import { tendersReducer, tendersSlice } from "./tenders/slice";
 import { userReducer, userSlice } from "./user/slice";
-import { userApi } from "./user/api";
 import { setupListeners } from "@reduxjs/toolkit/query";
+import { feedbackApi } from "./feedback/api";
 
 export const store = configureStore({
   reducer: {
     [tendersApi.reducerPath]: tendersApi.reducer,
-    [userApi.reducerPath]: userApi.reducer,
+    [feedbackApi.reducerPath]: feedbackApi.reducer,
     [tendersSlice.name]: tendersReducer,
     [userSlice.name]: userReducer,
   },
-  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(tendersApi.middleware, userApi.middleware)
+  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(tendersApi.middleware, feedbackApi.middleware)
 });
 
 setupListeners(store.dispatch);

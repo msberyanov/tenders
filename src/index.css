@@ -4,9 +4,6 @@
 
 html {
   background-size: 400% 400%;
-
-  animation: animated-background 7s ease infinite;
-  transition: background 3s ease;
 }
 
 .favourites {
@@ -21,14 +18,16 @@ html {
   background: linear-gradient(270deg, #25599b, #12639d);
 }
 
-*::-webkit-scrollbar {
-  display: none;
+.gallery {
+  background: linear-gradient(270deg, #25599b, #12639d);
 }
 
-@keyframes animated-background {
-  0%{background-position:0 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0 50%}
+.feedback {
+  background: linear-gradient(270deg, #25599b, #12639d);
+}
+
+*::-webkit-scrollbar {
+  display: none;
 }
 
 @keyframes appearance {

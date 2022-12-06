@@ -3,6 +3,12 @@ import { Link } from "react-router-dom";
 
 export const navigationButtons: NavigationButtonProps[] = [
   {
+    name: "Главная",
+    link: "/main",
+    className: "main",
+    selectionColor: "#5484b1"
+  },
+  {
     name: "Закупки",
     link: "/tenders",
     className: "tenders",
@@ -18,6 +24,18 @@ export const navigationButtons: NavigationButtonProps[] = [
     name: "Контакты",
     link: "/contacts",
     className: "contacts",
+    selectionColor: "#5484b1"
+  },
+  {
+    name: "Галерея",
+    link: "/gallery",
+    className: "gallery",
+    selectionColor: "#5484b1"
+  },
+  {
+    name: "Обратная связь",
+    link: "/feedback",
+    className: "feedback",
     selectionColor: "#5484b1"
   },
 ];

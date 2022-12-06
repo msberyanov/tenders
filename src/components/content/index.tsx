@@ -5,11 +5,15 @@ import { FavouritesTendersCover } from "./tenders/favourites/cover";
 import { ContactsCover } from "./contacts/cover";
 import { Tender } from "../page/tender";
 import { TendersSearchCover } from "./tenders/search/cover";
+import { GiOilDrum } from "react-icons/gi";
+import { FaUniversity } from "react-icons/fa";
+import { Gallery } from "../page/gallery";
+import { Feedback } from "../page/feedback";
 
 export const Content: React.FC = () => {
   return (
     <>
-      <div className="flex w-[calc(100%-60px)] h-[calc(100%-60px)] mb-[30px] bg-[rgba(255,255,255,0.2)] rounded-2xl mt-[100px] shadow-md overflow-scroll">
+      <div className="flex w-[calc(100%-60px)] h-[calc(100%)] mb-[35px] bg-[rgba(255,255,255,0.2)] rounded-2xl mt-[100px] shadow-md overflow-scroll">
         <Routes>
           <Route
             path="/tenders/search"
@@ -40,10 +44,22 @@ export const Content: React.FC = () => {
             element={<ContactsCover/>}
           />
           <Route
+            path="/gallery"
+            element={<Gallery/>}
+          />
+          <Route
+            path="/feedback"
+            element={<Feedback/>}
+          />
+          <Route
             path="*"
             element={<Navigate to="/tenders" replace/>}
           />
         </Routes>
+      </div>
+      <div className="flex w-[calc(100%-60px)] h-[calc(90px)] mb-[30px] bg-[rgba(255,255,255,0.2)] rounded-2xl shadow-md overflow-scroll justify-between">
+        <div className="flex items-center font-bold text-white ml-[20px]">ТЕНДЕРЫ<GiOilDrum className="ml-[5px] mr-[5px]"/>РФ © 2022</div>
+        <div className="flex items-center font-bold text-white mr-[20px]">ИНН УГНТУ <FaUniversity className="ml-[5px] mr-[5px]"/> Лия Низамова</div>
       </div>
     </>
   );

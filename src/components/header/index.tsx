@@ -5,6 +5,7 @@ import { SearchBar } from "./search-bar";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { ReturnButton } from "./navigation/return-button";
 import { SimpleButton } from "./navigation/simple-button";
+import { GiOilDrum } from "react-icons/gi";
 
 export const Header: React.FC = () => {
   const {pathname} = useLocation();
@@ -38,7 +39,7 @@ export const Header: React.FC = () => {
   return (
     <div className="fixed flex h-[100px] w-screen">
       <div className="flex w-screen justify-between items-center">
-        <div className="ml-[40px] text-xl text-white font-extrabold">ТЕНДЕРЫ</div>
+        <div className="flex items-center ml-[40px] text-xl text-white font-extrabold">ТЕНДЕРЫ<GiOilDrum className="ml-[5px] mr-[5px]"/>РФ</div>
         <div className="flex justify-center items-center">
           <Routes>
             <Route
