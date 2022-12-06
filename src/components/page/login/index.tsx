@@ -1,9 +1,8 @@
-import React, { useCallback, useRef, useState } from "react";
+import React, { useCallback, useMemo, useRef, useState } from "react";
 import { IUser } from "../../store/models/IUser";
 import "./index.css";
 import { useActions } from "../../store/hooks/actions";
 import { TENDERS_SERVER_URL } from "../../../constants/url";
-import { IoIosClose } from "react-icons/io";
 import { CgClose } from "react-icons/cg";
 import { AiOutlineLock } from "react-icons/ai";
 import { BsCheck } from "react-icons/bs";
@@ -15,7 +14,7 @@ export const Login: React.FC = () => {
   const passwordInput = useRef<HTMLInputElement>({} as HTMLInputElement);
   const button = useRef<HTMLButtonElement>({} as HTMLButtonElement);
 
-  const defaultLoginButton = <div className="flex w-full h-full items-center justify-center text-white"><AiOutlineLock className="mr-[5px]"/>Войти</div>;
+  const defaultLoginButton = useMemo(() => <div className="flex w-full h-full items-center justify-center text-white"><AiOutlineLock className="mr-[5px]"/>Войти</div>, []);
   const [buttonText, setButtonText] = useState<JSX.Element>(defaultLoginButton);
 
   const getToken = useCallback((login: string, password: string) => {
@@ -47,7 +46,7 @@ export const Login: React.FC = () => {
           setButtonText(defaultLoginButton);
         }, 1000);
       });
-  }, [setToken]);
+  }, [defaultLoginButton, setToken]);
 
   return (
     <div className="flex items-center justify-center h-full w-full animate-appearance">
