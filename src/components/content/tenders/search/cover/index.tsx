@@ -5,8 +5,11 @@ import { TendersCard } from "../../card";
 import { ITender } from "../../../../store/models/ITender";
 import { BiError, BiLoader } from "react-icons/bi";
 import { MdOutlineErrorOutline } from "react-icons/md";
+import { useTendersStoreSelector } from "../../../../store/hooks/redux";
 
 export const TendersSearchCover: React.FC = () => {
+  const {userToken} = useTendersStoreSelector(state => state["user/slice"]);
+
   const [searchParams] = useSearchParams();
 
   const name = searchParams.get("name");
@@ -17,7 +20,7 @@ export const TendersSearchCover: React.FC = () => {
     isLoading,
     isError,
     refetch
-  } = useSearchTendersQuery(name ?? "");
+  } = useSearchTendersQuery({name: name ?? "", token: userToken});
 
   const [tenders, setTenders] = useState<ITender[]>([]);
 

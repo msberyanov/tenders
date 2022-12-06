@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { isFetchBaseQueryError, useGetExactTenderQuery } from "../../store/tenders/api";
 import { BiError, BiLoader } from "react-icons/bi";
+import { useTendersStoreSelector } from "../../store/hooks/redux";
 
 interface TenderPropertyProps {
   title: string;
@@ -20,9 +21,11 @@ const TenderProperty: React.FC<TenderPropertyProps> = ({
 }
 
 export const Tender: React.FC = () => {
+  const {userToken} = useTendersStoreSelector(state => state["user/slice"]);
+
   const {id} = useParams();
 
-  const {data, isSuccess, isError, isLoading, error} = useGetExactTenderQuery(id ?? "");
+  const {data, isSuccess, isError, isLoading, error} = useGetExactTenderQuery({id: id ?? "", token: userToken});
 
   if (isLoading) {
     return (

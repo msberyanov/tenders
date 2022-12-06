@@ -4,6 +4,7 @@ import { ITender } from "../../../store/models/ITender";
 import { AiOutlineCheck } from "react-icons/ai";
 import { usePatchFavouriteTenderMutation } from "../../../store/tenders/api";
 import { Link } from "react-router-dom";
+import { useTendersStoreSelector } from "../../../store/hooks/redux";
 
 interface TendersCardProps extends ITender {
   refetch?: () => void;
@@ -19,6 +20,8 @@ export const TendersCard: React.FC<TendersCardProps> = ({
   refetch
 }) => {
   const [fetchChangeFavouriteTender, {isSuccess}] = usePatchFavouriteTenderMutation();
+
+  const {userToken} = useTendersStoreSelector(state => state["user/slice"]);
 
   useEffect(() => {
     if (isSuccess && refetch) {
@@ -55,7 +58,7 @@ export const TendersCard: React.FC<TendersCardProps> = ({
               className="flex w-full h-[50px] bg-[rgba(255,255,255,0.15)] justify-center items-center text-white hover:bg-[rgba(255,255,255,0.3)] transition-background"
               onClick={event => {
                 event.preventDefault();
-                fetchChangeFavouriteTender({id, favourite: !favourite});
+                fetchChangeFavouriteTender({id, favourite: !favourite, token: userToken});
               }}
             >
               {favourite ? (

@@ -3,6 +3,8 @@ import { Header } from "../header";
 import { Content } from "../content";
 import { useLocation } from "react-router-dom";
 import { navigationButtons } from "../header/navigation/button";
+import { useTendersStoreSelector } from "../store/hooks/redux";
+import { Login } from "../page/login";
 
 export const App: React.FC = () => {
   const {pathname} = useLocation();
@@ -18,10 +20,16 @@ export const App: React.FC = () => {
     }
   }, [pathname]);
 
+  const {userToken} = useTendersStoreSelector(state => state["user/slice"]);
+
   return (
     <div className="flex flex-col h-screen w-screen items-center">
-      <Header/>
-      <Content/>
+      {userToken ? (
+        <>
+          <Header/>
+          <Content/>
+        </>
+      ) : <Login/>}
     </div>
   );
 };

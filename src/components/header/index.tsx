@@ -98,7 +98,7 @@ export const Header: React.FC = () => {
         <div className="flex">
           <SearchBar/>
           {buttons.map(button =>
-            <Button icon={button.icon}/>
+            <Button icon={button.icon} type={button.type}/>
           )}
         </div>
       </div>

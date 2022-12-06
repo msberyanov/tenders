@@ -3,15 +3,18 @@ import { BiError, BiLoader } from "react-icons/bi";
 import { useGetFavouriteTendersQuery } from "../../../../store/tenders/api";
 import { ITender } from "../../../../store/models/ITender";
 import { TendersCard } from "../../card";
+import { useTendersStoreSelector } from "../../../../store/hooks/redux";
 
 export const FavouritesTendersCover: React.FC = () => {
+  const {userToken} = useTendersStoreSelector(state => state["user/slice"]);
+
   const {
     data,
     isSuccess,
     isLoading,
     isError,
     refetch
-  } = useGetFavouriteTendersQuery();
+  } = useGetFavouriteTendersQuery(userToken);
 
   const [tenders, setTenders] = useState<ITender[]>([]);
 

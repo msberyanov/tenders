@@ -1,9 +1,11 @@
 import { tendersActions } from "../tenders/slice";
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "@reduxjs/toolkit";
+import { userActions } from "../user/slice";
 
 const actions = {
-  ...tendersActions
+  ...tendersActions,
+  ...userActions
 }
 
 export const useActions = () => {

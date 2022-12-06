@@ -3,15 +3,18 @@ import { TendersCard } from "../card";
 import { BiError, BiLoader } from "react-icons/bi";
 import { useGetTendersQuery } from "../../../store/tenders/api";
 import { ITender } from "../../../store/models/ITender";
+import { useTendersStoreSelector } from "../../../store/hooks/redux";
 
 export const TendersCover: React.FC = () => {
+  const {userToken} = useTendersStoreSelector(state => state["user/slice"]);
+
   const {
     data,
     isSuccess,
     isLoading,
     isError,
     refetch
-  } = useGetTendersQuery();
+  } = useGetTendersQuery(userToken);
 
   const [tenders, setTenders] = useState<ITender[]>([]);
 
