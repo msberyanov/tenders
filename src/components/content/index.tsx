@@ -9,12 +9,17 @@ import { GiOilDrum } from "react-icons/gi";
 import { FaUniversity } from "react-icons/fa";
 import { Gallery } from "../page/gallery";
 import { Feedback } from "../page/feedback";
+import { Main } from "../page/main";
 
 export const Content: React.FC = () => {
   return (
     <>
       <div className="flex w-[calc(100%-60px)] h-[calc(100%)] mb-[35px] bg-[rgba(255,255,255,0.2)] rounded-2xl mt-[100px] shadow-md overflow-scroll">
         <Routes>
+          <Route
+            path="/main"
+            element={<Main/>}
+          />
           <Route
             path="/tenders/search"
             element={<TendersSearchCover/>}

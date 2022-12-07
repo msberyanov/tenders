@@ -6,6 +6,10 @@ html {
   background-size: 400% 400%;
 }
 
+.main {
+  background: linear-gradient(270deg, #25599b, #12639d);
+}
+
 .favourites {
   background: linear-gradient(270deg, #25599b, #12639d);
 }
