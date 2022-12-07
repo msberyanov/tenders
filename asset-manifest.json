@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/tenders/static/css/main.58a99920.css",
-    "main.js": "/tenders/static/js/main.8e9a61fd.js",
+    "main.js": "/tenders/static/js/main.fa2c516e.js",
     "static/media/image_8.jpg": "/tenders/static/media/image_8.e9aad3afb21313c7ff7d.jpg",
     "static/media/image_3.jpg": "/tenders/static/media/image_3.2a39a52b6c45633758b9.jpg",
     "static/media/main.png": "/tenders/static/media/main.f11cde41226acddab048.png",
@@ -14,10 +14,10 @@
     "static/media/image_1.jpg": "/tenders/static/media/image_1.3d6ef3724dc59b30df75.jpg",
     "index.html": "/tenders/index.html",
     "main.58a99920.css.map": "/tenders/static/css/main.58a99920.css.map",
-    "main.8e9a61fd.js.map": "/tenders/static/js/main.8e9a61fd.js.map"
+    "main.fa2c516e.js.map": "/tenders/static/js/main.fa2c516e.js.map"
   },
   "entrypoints": [
     "static/css/main.58a99920.css",
-    "static/js/main.8e9a61fd.js"
+    "static/js/main.fa2c516e.js"
   ]
 }
