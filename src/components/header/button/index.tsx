@@ -1,6 +1,7 @@
 import React from 'react';
 import { BiPowerOff, BiUser } from "react-icons/bi";
 import { useActions } from "../../store/hooks/actions";
+import { useNavigate } from "react-router-dom";
 
 export const buttons: ButtonProps[] = [
   {
@@ -22,6 +23,7 @@ export const Button: React.FC<ButtonProps> = ({
   icon,
   type
 }) => {
+  const navigate = useNavigate();
 
   const {clearToken} = useActions();
 
@@ -31,6 +33,8 @@ export const Button: React.FC<ButtonProps> = ({
       onClick={() => {
         if (type === "logout") {
           clearToken();
+        } else if (type === "profile") {
+          navigate("/contacts")
         }
       }}
     >
